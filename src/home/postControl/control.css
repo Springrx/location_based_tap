@@ -1,0 +1,10 @@
+.post{
+    z-index:  100;
+    width: 15%;
+    position:absolute;
+    background-color:white;
+    margin-left:80%;
+    margin-top:15%;
+    border-radius:10px;
+    box-shadow: 0px 0px 5px grey
+}

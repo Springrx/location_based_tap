@@ -1,0 +1,29 @@
+.message{
+    border-style:solid;
+    border-radius:30px;
+    border-color:#5134AB;
+    border-width:2px;
+    width:75%;
+    height:100px;
+    display: flex;
+    align-items: center;
+    margin-top: 8%;
+}
+.contentLayout{
+    display:flex;
+    flex-direction:column;
+    align-items:center
+}
+.messageIcon{
+    background-color: #F3F1F9;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    margin-left: 5%;
+}
+.MessageFilled{
+    color: #735FBF;
+     font-size: 30px;
+     position: relative;
+     margin-top: 25%;
+}

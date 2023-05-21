@@ -1,0 +1,42 @@
+.back{
+    margin-top: 12%;
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+}
+.head{
+    margin-top: 15%;
+}
+.codeBox{
+    margin-left: 5%;
+    background-color: #ECE9F6;
+    border: 0;
+    width:15%;
+    height:80px;
+    border-radius: 10px;
+}
+.verificationBox{
+    margin-top: 12%;
+}
+.grayScreen{
+    z-index: 10;
+    background-color:rgba(16, 16, 16, 0.9) ;
+    opacity:0.4;
+    height: 2000px;
+    width: 110%;
+    position: absolute;
+    margin-top: -200%
+}
+.sucCard{
+    z-index: 15;
+    background-color: rgb(255, 255, 255);
+    height: 435px;
+    width: 300px;
+    border-radius: 30px;
+    position: relative;
+    margin-top: -80%;
+    margin-left: 12%;
+    display: flex;
+   flex-direction:column ;
+   align-items: center;
+}
