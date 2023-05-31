@@ -24,8 +24,10 @@ function Login() {
         else is_manager = 0;
         const user = { userName: username, pwd: password, is_manager: is_manager };
         const res = await login(user);
+        const user_id=res.user_id;
+        debugger
         if (res) {
-          navigate('home');
+          navigate('home',{ state: { user_id:  user_id  } });
         }
         else message.error('登录失败');
       }

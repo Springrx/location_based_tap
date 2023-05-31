@@ -9,6 +9,8 @@ import Home from './home/home';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import ForgetPwd from './login/forgetPwd/forgetPwd';
 import Post from './home/postControl/post/post';
+import Playground from './playground/playground';
+import Browse from './home/postControl/browse/browse';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
@@ -17,8 +19,10 @@ root.render(
     <Route path="/register" element={<Register/>}/>
     <Route path="/register/verification" element={<Verification/>}/>
     <Route path="/home" element={<Home/>}/>
+    <Route path="/playground" element={<Playground/>}/>
     <Route path="/post" element={<Post/>}/>
     <Route path="/forgetPwd" element={<ForgetPwd/>}/>
+    <Route path="/browse" element={<Browse/>}/>
   </Routes>
   </BrowserRouter>
 );

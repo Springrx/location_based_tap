@@ -1,0 +1,42 @@
+.ava{
+    border-radius: 5px;
+}
+.avaImg{
+    width: 50px;
+    height: 50px;
+}
+.headBar{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.browse{
+    margin-top: 15%;
+}
+.PostCard{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 8%;
+    display: flex;
+}
+.postCardContent{
+    margin-left: 5%;
+    width: 100%;
+}
+.Comment{
+    background-color: #F3F1F9;
+    width: 100%;
+    margin-top: 8%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.Photo{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap:wrap;
+
+}
+.oneComment{
+    margin-bottom:3% ;
+    margin-left: 3%;
+    margin-right: 3%;
+}

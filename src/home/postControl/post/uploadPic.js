@@ -2,6 +2,7 @@ import { PlusOutlined } from '@ant-design/icons';
 import { Modal, Upload } from 'antd';
 import { HOST } from '../../../component/fetch';
 import { useState } from 'react';
+
 const getBase64 = (file) =>
   new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -9,33 +10,22 @@ const getBase64 = (file) =>
     reader.onload = () => resolve(reader.result);
     reader.onerror = (error) => reject(error);
   });
-const UploadPic = () => {
+const UploadPic = (props) => {
+  const getImgList=props.getImgList;
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewImage, setPreviewImage] = useState('');
 //   const [previewTitle, setPreviewTitle] = useState('');
   const [fileList, setFileList] = useState([
-    {
-      uid: '-1',
-      name: 'image.png',
-      status: 'done',
-      url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-    },
-    {
-      uid: '-xxx',
-      percent: 50,
-      name: 'image.png',
-      status: 'uploading',
-      url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-    },
-    {
-      uid: '-5',
-      name: 'image.png',
-      status: 'error',
-    },
+    // {
+    //   uid: '-1',
+    //   name: 'image.png',
+    //   status: 'done',
+    //   url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+    // },
   ]);
   const handleCancel = () => setPreviewOpen(false);
   const handlePreview = async (file) => {
-
+    debugger;
     if (!file.url && !file.preview) {
       file.preview = await getBase64(file.originFileObj);
     }
@@ -43,7 +33,7 @@ const UploadPic = () => {
     setPreviewOpen(true);
     
   };
-  const handleChange = ({ fileList: newFileList }) => {setFileList(newFileList)};
+  const handleChange = ({ fileList: newFileList }) => {setFileList(newFileList);getImgList(newFileList)};
   const uploadButton = (
     <div>
       <PlusOutlined />
@@ -52,13 +42,13 @@ const UploadPic = () => {
           marginTop: 8,
         }}
       >
-        Upload
+        Photo
       </div>
     </div>
   );
 
   return (
-    <>
+    <div >
       <Upload
         action={HOST+'/uploadImg'}
         listType="picture-card"
@@ -69,10 +59,8 @@ const UploadPic = () => {
       >
         {fileList.length >= 6 ? null : uploadButton}
       </Upload>
+
       <Modal open={previewOpen}  footer={null} onCancel={handleCancel}>
-        {/* 判断url后缀名是否为图片，如果是，则渲染img, 不是，则渲染video */}
-
-
      <img
           alt="example"
           style={{
@@ -81,7 +69,8 @@ const UploadPic = () => {
           src={previewImage}
         />
       </Modal>
-    </>
+
+    </div>
   );
 };
 export default UploadPic;

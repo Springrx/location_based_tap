@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import Icon from '../../svg/index';
-import './fontBar.css'
+import './fontBar.css';
+import { useNavigate } from 'react-router-dom';
 function FontBar() {
     const [logoclick, setLogoclick] = useState(1);
     const [groundclick, setGroundclick] = useState(0);
     const [myclick, setMyclick] = useState(0);
+    const navigate=useNavigate();
     return <div className='fontBar'>
         <div onClick={() => {
             setLogoclick(1);
+            navigate('../home');
             setGroundclick(0);
             setMyclick(0)
         }}>
@@ -17,7 +20,8 @@ function FontBar() {
             }
         </div>
         <div onClick={() => {
-            setGroundclick(1);
+            navigate('../playground');
+            setGroundclick(1);          
             setLogoclick(0);
             setMyclick(0)
         }}>
